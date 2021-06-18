@@ -1,3 +1,10 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  root "line_bot_yuan#index"
+
+  resources :line_bot_yuan do
+    collection do
+      post :webhook
+    end
+  end
 end
