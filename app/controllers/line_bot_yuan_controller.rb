@@ -8,7 +8,7 @@ class LineBotYuanController < ApplicationController
     reply_text = keyword_reply(recevied_text)
 
     # TODO: 主動發送訊息
-    response = reply_to_line(message)
+    response = reply_to_line(reply_text)
 
     head :ok
   end
@@ -26,7 +26,7 @@ class LineBotYuanController < ApplicationController
 
   # 發送訊息到 line
   def reply_to_line(reply_text)
-    reply_token = params['events'][0]['replyToken']
+    reply_token = params[:events][0][:replyToken]
 
     message = {
       type: 'text',
@@ -37,11 +37,11 @@ class LineBotYuanController < ApplicationController
   end
 
   def keyword_reply(recevied_text)
-    recevied_text
+    Time.zone.now.to_s unless recevied_text == "@小圓 現在幾點" 
   end
 
   def recevied_text
-    message = params[:event][0][:message]
-    message['text'] unless message.nil?
+    message = params[:events][0][:message]
+    message[:text] unless message.nil?
   end
 end
