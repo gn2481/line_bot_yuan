@@ -29,7 +29,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.4', require: false
 
 #line_bot_api
-gem 'line-bot-api', '~> 0.1.0'
+gem 'line-bot-api'
 
 # dotenv
 gem 'dotenv-rails', groups: %i[development test]
@@ -48,6 +48,11 @@ group :development do
   gem 'listen', '~> 3.3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+  gem 'pry-rails'
+  gem 'pry'
+  gem 'pry-remote'
+  gem 'pry-nav'
 end
 
 group :test do
