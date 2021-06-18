@@ -37,7 +37,8 @@ class LineBotYuanController < ApplicationController
   end
 
   def keyword_reply(recevied_text)
-    "現在時間是 #{Time.zone.now.strftime("%l:%M:%S %p")}" unless recevied_text == "@小圓 現在幾點" 
+    return unless recevied_text == "@小圓 現在幾點" 
+    "現在時間是 #{Time.zone.now.strftime("%l:%M:%S %p")}"
   end
 
   def recevied_text
