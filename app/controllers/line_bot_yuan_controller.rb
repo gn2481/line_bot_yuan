@@ -37,7 +37,7 @@ class LineBotYuanController < ApplicationController
   end
 
   def keyword_reply(recevied_text)
-    Time.zone.now.to_s unless recevied_text == "@小圓 現在幾點" 
+    Time.zone.now.to_s(:long) unless recevied_text == "@小圓 現在幾點" 
   end
 
   def recevied_text
