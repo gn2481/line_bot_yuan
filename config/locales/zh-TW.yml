@@ -1,0 +1,11 @@
+zh-TW:
+  activerecord:
+    attributes:
+      item:
+        attribution: "來源"
+        description: "敘述"
+        image_link: "圖片連結"
+        kind: "類型"
+        name: "名稱"
+        rare: "稀有度"
+        tag: "詳細來源"

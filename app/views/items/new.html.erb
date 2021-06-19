@@ -1,0 +1,15 @@
+<h1>新增</h1>
+  <div class="row justify-content-center">
+    <div class="col-6  align-self-center">
+      <%= simple_form_for @item do |f| %>
+        <%= f.input :kind, as: :select, collection: Item.kinds.map{ |key, value| [t("enum.items.kind.#{key}"), key] }, required: true %>
+        <%= f.input :name, required: true %>
+        <%= f.input :attribution, as: :select, required: true, collection: Item.attributions.map{ |key, value| [t("enum.items.attribution.#{key}"), key] } %>
+        <%= f.input :tag, placeholder:"若非季節或先祖，則不填" %>
+        <%= f.input :description %>
+        <%= f.input :rare, as: :select, collection: 0..5 %>
+        <%= f.input :image_link %>
+        <%= f.submit "新增", disable_with: 'Submiting...', class:"btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>

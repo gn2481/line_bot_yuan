@@ -1,0 +1,13 @@
+zh-TW:
+  enum:
+    items:
+      kind:
+        back: "背部"
+        cape: "披風"
+        hair: "髮型"
+        face: "面具"
+        clothes: "衣服"
+      attribution: 
+        spirit: "地圖先祖"
+        season_spirit: "季節先祖"
+        shop: "商城"

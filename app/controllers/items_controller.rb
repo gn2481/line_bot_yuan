@@ -1,19 +1,23 @@
 class ItemsController < ApplicationController
-  
     def index
+      # 之後做分頁
       @items = Item.all
-    end
-  
-    def show
     end
 
     def new
-      @items = items.new
+      @item = Item.new
     end
-    
   
     def create
-      @items = items.new(items_params)
+      @item = Item.new(items_params)
+
+      if @item.save
+        flash[:notice] = "成功"
+        redirect_to root_path
+      else
+        flash[:alert] = "新增失敗"
+        render :new
+      end
     end
   
     def update
@@ -32,7 +36,7 @@ class ItemsController < ApplicationController
     end
 
     def items_params
-      
+      params.require(:item).permit(:kind, :name, :attribution, :image_link, :rare, :description, :tag)
     end
     
 end

@@ -1,4 +1,7 @@
 class Item < ApplicationRecord
+  validates :kind, :name, :attribution,  presence: true
+  validates :name, uniqueness: true
+  
 # isle: 0,
 # prairie: 1,
 # forest: 2,
@@ -15,9 +18,9 @@ class Item < ApplicationRecord
 # 預言 prophecy
 # 重組 assembly
 
-  eunm kind: {
+  enum kind: {
     back: 0,
-    cloak: 1,
+    cape: 1,
     hair: 2,
     face: 3,
     clothes:4
