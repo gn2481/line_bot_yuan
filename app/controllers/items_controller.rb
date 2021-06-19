@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  before_action :find_item, only: %i[edit update destroy]
     def index
       # 之後做分頁
       @items = Item.all
@@ -19,20 +20,26 @@ class ItemsController < ApplicationController
         render :new
       end
     end
-  
+      
+    def edit; end
+
     def update
+      if @item.update(items_params)
+        flash[:notice] = "更新成功"
+        redirect_to root_path
+      else
+        flash[:alert] = "更新失敗"
+        render :edit
+      end
     end
-  
-    def edit
-    end
-  
+
     def destroy
     end
 
     private
 
-    def find_items
-      @items = items.find(params[:id])
+    def find_item
+      @item = Item.find(params[:id])
     end
 
     def items_params

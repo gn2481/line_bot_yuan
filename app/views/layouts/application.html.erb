@@ -48,14 +48,10 @@
       </div>
     </nav>
 
-    
     <div class="container bg-white vh-100">
-      <% flash.each do |type, msg| %>
-        <div>
-          <%= msg %>
-        </div>
-      <% end %>
+      <%= render "common/flashes" %>
       <%= yield %>
     </div>
+    <%= render "common/footer" %>
   </body>
 </html>
