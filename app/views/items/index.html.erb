@@ -1,0 +1,27 @@
+<h1>Sky 全圖鑑</h1>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>部位</th>
+      <th>名稱</th>
+      <th>來源</th>
+      <th>描述</th>
+      <th>稀有度</th>
+      <th>圖片連結</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @items.each do |item| %>
+    <tr>
+      <td><% item.kind %></td>
+      <td><% item.name %></td>
+      <td><% item.attribution %>-<% item.tag %></td>
+      <td><% item.descrption %></td>
+      <td><% item.rare %></td>
+      <td><% item.image_link %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
