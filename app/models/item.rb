@@ -23,7 +23,9 @@ class Item < ApplicationRecord
     cape: 1,
     hair: 2,
     face: 3,
-    clothes:4
+    clothes:4,
+    choker:5,
+    headwear:6
   }
 
   enum attribution: {
