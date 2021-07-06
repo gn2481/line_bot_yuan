@@ -1,4 +1,5 @@
 class Item < ApplicationRecord
+  mount_uploader :icon, ItemIconUploader
   validates :kind, :name, :attribution,  presence: true
   validates :name, uniqueness: true
   
@@ -40,6 +41,7 @@ end
 #  id                   :bigint           not null, primary key
 #  attribution(來源)    :integer
 #  description(描述)    :string
+#  icon                 :string
 #  image_link(圖片連結) :string
 #  kind                 :integer
 #  name(名稱)           :string
