@@ -10,10 +10,10 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class="bg-light">
+  <body class="body">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Sky 光遇</a>
+        <a class="navbar-brand" href=<% root_path %>>Sky 光遇</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -26,11 +26,10 @@
         </div>
       </div>
     </nav>
-
-    <div class="container bg-white vh-100">
+    <div class="container vh-100 background">
       <%= render "common/flashes" %>
       <%= yield %>
+      <%= render "common/footer" %>
     </div>
-    <%= render "common/footer" %>
   </body>
 </html>
