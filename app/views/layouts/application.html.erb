@@ -10,7 +10,7 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class="body">
+  <body class="body vh-100">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
         <a class="navbar-brand" href=<% root_path %>>Sky 光遇</a>
@@ -26,7 +26,7 @@
         </div>
       </div>
     </nav>
-    <div class="container vh-100 background">
+    <div class="container container-background">
       <%= render "common/flashes" %>
       <%= yield %>
       <%= render "common/footer" %>
