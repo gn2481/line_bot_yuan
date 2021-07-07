@@ -1,6 +1,7 @@
 <% if flash.any? %>
   <% user_facing_flashes.each do |key, value| %>
     <div class="alert alert-dismissable alert-<%= flash_class(key) %>">
+      <button type="button" class="close btn-close btn-outline-<%= flash_class(key) %>" data-bs-dismiss="alert"></button>
       <%= value %>
     </div>
   <% end %>
