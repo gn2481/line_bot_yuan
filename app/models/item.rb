@@ -23,15 +23,17 @@ class Item < ApplicationRecord
     cape: 1,
     hair: 2,
     face: 3,
-    clothes:4,
-    choker:5,
-    headwear:6
+    clothes: 4,
+    choker: 5,
+    headwear: 6,
+    magic: 7
   }
 
   enum attribution: {
     spirit: 0,
     season_spirit: 1,
-    shop: 2
+    shop: 2,
+    holiday: 3
   }
 end
 
