@@ -17,9 +17,19 @@
       <%= f.input :description %>
       <%= f.input :rare, as: :select, collection: 0..5 %>
       <%= f.input :image_link %>
-      <div class="row justify-content-end">
-        <%= f.submit "送出", disable_with: '請稍等....', class:"btn btn-primary mb-2" %>
-        <%= link_to '回列表頁', items_path, class:"btn btn-outline-success" %>
+      <div class="row justify-content-around mb-2">
+        <a href="https://imgur.com/a/tT76lJx" class="col" target="_blank">頭飾圖片</a>
+        <a href="https://imgur.com/a/qhCsohc" class="col" target="_blank">背飾圖片</a>
+        <a href="https://imgur.com/a/mCf3jc0" class="col" target="_blank">頭髮圖片</a>
+        <a href="https://imgur.com/a/3QynjoU" class="col" target="_blank">面具圖片</a>
+        <a href="https://imgur.com/a/rKldltY" class="col" target="_blank">項鍊圖片</a>
+        <a href="https://imgur.com/a/reEfqOz" class="col" target="_blank">披風圖片</a>
+        <a href="https://imgur.com/a/wWsx1Bf" class="col" target="_blank">衣服圖片</a>
+
+      </div>
+      <div class="row justify-content-around">
+        <%= f.submit "送出", disable_with: '請稍等....', class:"btn btn-primary col-md-5" %>
+        <%= link_to '回列表頁', items_path, class:"btn btn-outline-success col-md-5" %>
       </div>
     <% end %>
   </div>
