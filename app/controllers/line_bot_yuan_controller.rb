@@ -37,12 +37,37 @@ class LineBotYuanController < ApplicationController
   end
 
   def keyword_reply(recevied_text)
-    return unless recevied_text == "@小圓 現在幾點" 
-    "現在時間是 #{Time.zone.now.strftime("%l:%M:%S %p")}"
+    return unless recevied_text == "@小圓 抽" 
+    "今天的你適合～\n #{lottery_string}"
   end
 
   def recevied_text
     message = params[:events][0][:message]
     message[:text] unless message.nil?
+  end
+
+  def item_name(kind)
+    begin
+      item_name = case kind
+                when "back"
+                  Item.back.sample.name
+                when "cape"
+                  Item.cape.sample.name
+                when "hair"
+                  Item.hair.sample.name
+                when "face"
+                  Item.face.sample.name
+                when "clothes"
+                  Item.clothes.sample.name
+                when "choker"
+                  Item.choker.sample.name
+                end
+    rescue NoMethodError => e
+      "供你自由搭配唷"
+    end
+  end
+# 衣服 面具 頭髮頭飾披風背飾項鍊
+  def lottery_string
+    "衣服： #{item_name("clothes")} \n 面具：#{item_name("mask")} \n 頭髮：#{item_name("hair")} \n 頭飾：#{item_name("headwear")} \n 披風：#{item_name("cape")} \n 背飾： #{item_name("back")} \n 項鍊：#{item_name("choker")}"
   end
 end
