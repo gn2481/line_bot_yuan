@@ -1,15 +1,21 @@
-<h1>Sky 全圖鑑</h1>
-<%= link_to '新增', new_item_path, class:"btn btn-primary" %>
+<%= content_for :js do %>
+  <script>
+    $(".loading-text").classList.add("d-none")
+  </script>
+<% end %>
 
-<table class="table table-striped table-hover align-middle text-center">
-  <thead>
+<h1>Sky 全圖鑑</h1>
+<%= link_to '＋', new_item_path, class:"btn btn-primary new_item_btn fs-3" %>
+
+<table class="table table-striped table-hover align-middle text-center" data-toggle="table" data-classes="table-striped" id="item-table" >
+  <thead class="table-dark">
     <tr>
       <th>icon</th>
-      <th>部位</th>
-      <th>名稱</th>
-      <th>來源</th>
+      <th data-sortable="true" data-field="kind">部位</th>
+      <th data-sortable="true" data-field="name">名稱</th>
+      <th data-sortable="true" data-field="source">來源</th>
       <th>描述</th>
-      <th>稀有度</th>
+      <th data-sortable="true" data-field="rare">稀有度</th>
       <%# <th>圖片連結</th> %>
       <th></th>
     </tr>
@@ -30,3 +36,4 @@
   <% end %>
   </tbody>
 </table>
+

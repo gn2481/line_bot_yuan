@@ -37,6 +37,7 @@ class LineBotYuanController < ApplicationController
   end
 
   def keyword_reply(recevied_text)
+    return "webhook 已開啟" if recevied_text == "@小圓 webhook" 
     return unless recevied_text == "@小圓 抽" 
     "今天的你適合～\n #{lottery_string}"
   end
